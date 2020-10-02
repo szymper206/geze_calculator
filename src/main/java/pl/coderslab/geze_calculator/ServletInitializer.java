@@ -1,4 +1,4 @@
-package pl.coderslab.geze_calculator;
+/*package pl.coderslab.geze_calculator;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -10,4 +10,4 @@ public class ServletInitializer extends SpringBootServletInitializer {
         return application.sources(GezeCalculatorApplication.class);
     }
 
-}
+}*/

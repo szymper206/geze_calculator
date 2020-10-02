@@ -8,23 +8,28 @@ import lombok.ToString;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
 @ToString
 @Entity
-@Table(name = User.TABLE)
 public class User {
-    protected final static String TABLE = "users";
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
+    private String firstName;
+    private String lastName;
     @Email
-    @NotBlank
+    @NotNull
+    @Column(nullable = false, unique = true, length = 60)
     private String email;
-
     @NotBlank
     private String password;
+    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+    private Set<UserRole> roles = new HashSet<>();
+
 }

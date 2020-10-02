@@ -1,13 +1,12 @@
 package pl.coderslab.geze_calculator.user;
 
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 import java.util.Optional;
 
@@ -17,20 +16,39 @@ import java.util.Optional;
 public class UserController {
     private final UserService userService;
 
-    @GetMapping("/add")
-    public String addUser(Model model) {
+
+    @GetMapping("/register")
+    public String register(Model model) {
         model.addAttribute("user", new User());
         return "user/form";
     }
 
-    @PostMapping("/add")
-    public String saveUser(@Valid User user,
-                           BindingResult result) {
-        if (result.hasErrors()) {
+    @PostMapping("/register")
+    public String addUser(@ModelAttribute @Valid User user,
+                          BindingResult bindResult) {
+        if(bindResult.hasErrors())
             return "user/form";
+        else {
+            userService.addWithDefaultRole(user);
+            return "user/registerSuccess";
         }
-        userService.saveUser(user);
-        return "redirect:/user/all";
+    }
+
+    @GetMapping("/admin")
+    public String registerAdmin(Model model) {
+        model.addAttribute("user", new User());
+        return "user/admin";
+    }
+
+    @PostMapping("/admin")
+    public String addAdmin(@ModelAttribute @Valid User user,
+                           BindingResult bindResult) {
+        if(bindResult.hasErrors()) {
+            return "user/admin";
+        }
+        userService.addAdmin(user);
+        return "user/registerSuccess";
+
     }
 
     @GetMapping("/all")
@@ -64,7 +82,7 @@ public class UserController {
             model.addAttribute("errorMessage", "id sie nie zgadzają");
             return "error";
         }
-        userService.saveUser(user);
+        userService.addWithDefaultRole(user);
         return "redirect:/user/all";
     }
 
