@@ -10,13 +10,18 @@
     </style>
 </head>
 <body>
-<form:form method="post" modelAttribute="user">
+<form:form method="post" modelAttribute="user" >
     <form:hidden path="id"/>
+    Imię: <form:input path="firstName"/><br>
+    <form:errors path="firstName" cssClass="error"/><br>
+    Nazwisko: <form:input path="lastName"/><br>
+    <form:errors path="lastName" cssClass="error"/><br>
     Email: <form:input path="email"/><br>
     <form:errors path="email" cssClass="error"/><br>
-    Hasło: <form:password path="password"/><br>
+    Hasło: <form:password path="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                          title="Musi zawierać conajmniej jedną cyfrę, jedną dużą i małą literę oraz conajmniej 8 znaków"/><br>
     <form:errors path="password" cssClass="error"/><br>
-    <input type="submit" value="Wyślij">
+    <input type="submit" value="Zarejestruj">
 </form:form>
 </body>
 </html>

@@ -2,7 +2,7 @@ package pl.coderslab.geze_calculator.product;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
+import pl.coderslab.geze_calculator.product_type.ProductType;
 
 
 import javax.transaction.Transactional;
@@ -30,4 +30,9 @@ public class ProductService {
     public List<Product> findAllProduct() {
         return productRepository.findAll();
     }
+
+    public List<Product> findAllProductsByProductType(ProductType productType) {
+        return productRepository.findAllByProductType(productType);
+    }
+
 }
