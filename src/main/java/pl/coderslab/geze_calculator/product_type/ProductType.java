@@ -23,8 +23,9 @@ public class ProductType {
     @NotBlank
     private String name;
     @ManyToOne
+    @JoinColumn(nullable = false)
     private ProductGroup productGroup;
-    @OneToMany(mappedBy = "productType")
+    @OneToMany(mappedBy = "productType", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Product> products =
             new ArrayList<>();
 

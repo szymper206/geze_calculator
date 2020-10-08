@@ -16,6 +16,7 @@ public class AssortmentProducts {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @ManyToOne
+    @JoinColumn(nullable = false)
     private Assortment assortment;
     private String name;
     private long idNumber;

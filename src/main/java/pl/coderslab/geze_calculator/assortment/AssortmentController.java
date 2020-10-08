@@ -28,6 +28,24 @@ public class AssortmentController {
         return productTypeService.findAllProductType();
     }
 
+    @ModelAttribute("productTypesSlidingDoors")
+    public List<ProductType> getAllProductTypesForSlidingDoors() {
+        Optional<ProductGroup> productGroup = productGroupService.findProductGroupById(1);
+        if (!productGroup.isPresent()) {
+            return getAllProductTypes();
+        }
+        return productTypeService.findProductTypesByProductGroup(productGroup.get());
+    }
+
+    @ModelAttribute("productTypesSwingDoors")
+    public List<ProductType> getAllProductTypesForSwingDoors() {
+        Optional<ProductGroup> productGroup = productGroupService.findProductGroupById(2);
+        if (!productGroup.isPresent()) {
+            return getAllProductTypes();
+        }
+        return productTypeService.findProductTypesByProductGroup(productGroup.get());
+    }
+
     @ModelAttribute("productGroups")
     public List<ProductGroup> getAllProductGroups() {
         return productGroupService.findAllProductGroup();
@@ -79,7 +97,7 @@ public class AssortmentController {
             model.addAttribute("errorMessage", "id sie nie zgadzają");
             return "error";
         }
-        assortmentService.saveAssortment(assortment);
+        assortmentService.saveAssortmentWithProductsAssortment(assortment);
         return "redirect:/assortment/all";
     }
 

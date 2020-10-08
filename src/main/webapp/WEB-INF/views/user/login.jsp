@@ -4,6 +4,7 @@
     <title>Login Page</title>
 </head>
 <body>
+<h1>Logowanie</h1><br>
 <form method="post">
     <div><label> Email : <input type="text" name="username"/> </label></div>
     <div><label> Hasło: <input type="password" name="password"/> </label></div>

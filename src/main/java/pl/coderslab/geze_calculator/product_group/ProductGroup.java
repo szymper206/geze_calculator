@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import pl.coderslab.geze_calculator.product_type.ProductType;
 
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class ProductGroup {
     private long id;
     @NotBlank
     private String name;
-    @OneToMany(mappedBy = "productGroup")
+    @OneToMany(mappedBy = "productGroup", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ProductType> productTypes =
             new ArrayList<>();
 

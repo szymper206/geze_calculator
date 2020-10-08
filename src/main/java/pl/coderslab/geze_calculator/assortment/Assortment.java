@@ -27,7 +27,7 @@ public class Assortment {
     private ProductGroup productGroup;
     @OneToOne
     private ProductType productType;
-    @OneToMany(mappedBy = "assortment")
+    @OneToMany(mappedBy = "assortment", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AssortmentProducts> assortmentProducts =
             new ArrayList<>();
 

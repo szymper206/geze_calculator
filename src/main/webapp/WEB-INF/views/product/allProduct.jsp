@@ -6,7 +6,7 @@
     <title>All Products</title>
 </head>
 <body>
-<h1>Lista Towarów</h1>
+<h1>Lista Produktów</h1>
 <a href="/product/add">Dodaj Towar</a><br>
 <table border="1">
     <tr>

@@ -23,6 +23,7 @@ public class Product {
     private long idNumber;
     private double defQuantity;
     @ManyToOne
+    @JoinColumn(nullable = false)
     private ProductType productType;
     @ManyToOne
     private MathFormula mathFormula;

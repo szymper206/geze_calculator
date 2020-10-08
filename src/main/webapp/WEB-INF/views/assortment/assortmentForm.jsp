@@ -9,8 +9,11 @@
             color: red;
         }
     </style>
+    <script src="../../../script/assortmentForm.js" type="text/javascript"></script>
+
 </head>
 <body>
+<script src="../../../script/assortmentForm.js"></script>
 <form:form method="post" modelAttribute="assortment" >
     <form:hidden path="id"/>
     Wysokość światła przejścia: <form:input path="length"/><br>
@@ -19,17 +22,27 @@
     <form:errors path="width" cssClass="error"/><br>
     Czy lakierowane?: <form:checkbox path="painted"/><br>
     Notatki: <form:textarea path="description"/><br>
-    Grupa towarowa: <form:select path="productGroup">
+
+    <div id="productGroup">
+    <form:select path="productGroup" >
     <form:option value="0" label="wybierz grupę towarową"/>
-    <form:options items="${productGroups}" itemValue="id" itemLabel="name"/>
+        <form:options items="${productGroups}" itemValue="id" itemLabel="name"/>
     </form:select><br>
-    Typ towaru: <form:select path="productType">
+    <form:errors path="productGroup" cssClass="error"/><br>
+    </div>
+
+    <div id="productType">
+    <form:select path="productType">
     <form:option value="0" label="wybierz typ towaru"/>
     <form:options items="${productTypes}" itemValue="id" itemLabel="name"/>
     </form:select><br>
     <form:errors path="productType" cssClass="error"/><br>
+    </div>
+
     <input type="submit" value="Dodaj dobór">
 </form:form>
+
+
 </body>
 </html>
 

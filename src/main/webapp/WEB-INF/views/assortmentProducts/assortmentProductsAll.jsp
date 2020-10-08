@@ -24,6 +24,7 @@
     </c:forEach>
 </table>
 <br>
+<a href="/assortmentProduct/download"><input type="submit" value="Pobierz pdf"></a><br>
 <a href="/"><input type="submit" value="Powrót do strony głównej"></a>
 </body>
 </html>
