@@ -3,13 +3,28 @@
 <head>
     <title>Login Page</title>
 </head>
+<link href="https://unpkg.com/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
-<h1>Logowanie</h1><br>
-<form method="post">
-    <div><label> Email : <input type="text" name="username"/> </label></div>
-    <div><label> Hasło: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Zaloguj"/></div>
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-</form>
+<div class="jumbotron text-center">
+    <H1>Logowanie</H1><br>
+</div>
+<div class="container">
+    <form method="post">
+        <div class="form-group">
+            <label for="username">Email:</label>
+            <input type="text" name="username" id="username" class="form-control"/>
+        </div>
+        <div>
+            <label for="password">Hasło:</label>
+            <input type="password" name="password" id="password" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Zaloguj</button>
+        </div>
+
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+    </form>
+</div>
 </body>
 </html>

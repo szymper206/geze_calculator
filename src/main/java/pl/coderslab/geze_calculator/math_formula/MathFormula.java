@@ -17,7 +17,7 @@ public class MathFormula {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @NotBlank
+    @NotBlank(message = "Pole nie może być puste")
     private String name;
     @OneToMany(mappedBy = "mathFormula")
     private List<Product> products =

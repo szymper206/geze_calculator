@@ -5,15 +5,21 @@
 <head>
     <title>All Users</title>
 </head>
+<link href="https://unpkg.com/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
-<h1>Lista użytkowników</h1>
-<a href="/user/register">Dodaj użytkownika</a><br>
-<table border="1">
-    <tr>
+<div class="jumbotron text-center">
+    <h1>Lista użytkowników</h1>
+</div>
+
+<div class="container">
+<a href="/user/register"><input type="submit" value="Dodaj użytkownika"></a>
+    <br>
+<table border="1" class="table table-striped table-boarder">
+    <tr class="thead-dark">
         <td>Id</td>
         <td>Imię</td>
         <td>Nazwisko</td>
-        <td>email</td>
+        <td>Email</td>
         <td>Akcja</td>
     </tr>
     <c:forEach items="${users}" var="user">
@@ -30,5 +36,6 @@
 </table>
 <br>
 <a href="/"><input type="submit" value="Powrót do strony głownej"></a>
+</div>
 </body>
 </html>

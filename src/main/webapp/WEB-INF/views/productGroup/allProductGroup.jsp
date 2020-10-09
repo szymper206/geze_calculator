@@ -5,11 +5,15 @@
 <head>
     <title>All Product Groups</title>
 </head>
+<link href="https://unpkg.com/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
-<h1>Lista Grup Towarowych</h1>
-<a href="/productGroup/add">Dodaj Grupę Towaru</a><br>
-<table border="1">
-    <tr>
+<div class="jumbotron text-center">
+    <h1>Lista Grup Towarowych</h1>
+</div>
+<div class="container">
+<a href="/productGroup/add"><input type="submit" value="Dodaj grupę towarową"></a><br>
+<table border="1" class="table table-striped table-boarder">
+    <tr class="thead-dark">
         <td>Id</td>
         <td>Nazwa</td>
         <td>Akcja</td>
@@ -26,5 +30,6 @@
 </table>
 <br>
 <a href="/"><input type="submit" value="Powrót do strony głównej"></a>
+</div>
 </body>
 </html>

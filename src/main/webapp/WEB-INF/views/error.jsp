@@ -4,8 +4,9 @@
 <head>
     <title>Error</title>
 </head>
+<link href="https://unpkg.com/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
-${errorMessage}<br>
+ERROR<br>
 <a href="/">Powrót do strony głównej</a>
 </body>
 </html>

@@ -5,7 +5,11 @@
 <head>
     <title>Confirm Delete Product Group</title>
 </head>
+<link href="https://unpkg.com/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
+<div class="jumbotron text-center">
+    <h1>Potwierdź usunięcie</h1>
+</div>
 <p>Czy na pewno chcesz usunąć ${productGroup.name}</p>
 <a href="/productGroup/all"><input type="submit" value="Anuluj"></a>
 

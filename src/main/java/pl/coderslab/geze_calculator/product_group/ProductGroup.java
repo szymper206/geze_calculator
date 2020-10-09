@@ -17,9 +17,10 @@ public class ProductGroup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @NotBlank
+    @NotBlank(message = "Proszę podać nazwę grupy towarowej")
+    @Column(nullable = false, unique = true)
     private String name;
-    @OneToMany(mappedBy = "productGroup", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "productGroup", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<ProductType> productTypes =
             new ArrayList<>();
 

@@ -9,8 +9,11 @@
         }
     </style>
 </head>
+<link href="https://unpkg.com/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
-Rejestracja admina<br>
+<div class="jumbotron text-center">
+    <h1>Rejestracja admina</h1>
+</div>
 <form:form method="post" modelAttribute="user" >
     <form:hidden path="id"/>
     <form:hidden path="email" value="s.jaroszynski@geze.com"/><br>

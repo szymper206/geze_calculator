@@ -6,6 +6,7 @@ import pl.coderslab.geze_calculator.assortment_products.AssortmentProducts;
 import pl.coderslab.geze_calculator.math_formula.MathematicalFormule;
 import pl.coderslab.geze_calculator.product.Product;
 import pl.coderslab.geze_calculator.product.ProductService;
+import pl.coderslab.geze_calculator.product_group.ProductGroup;
 import pl.coderslab.geze_calculator.product_type.ProductType;
 
 import javax.transaction.Transactional;
@@ -53,6 +54,8 @@ public class AssortmentService {
             }
             assortment.getAssortmentProducts().add(assortmentProducts);
         });
+        ProductGroup productGroup = productType.getProductGroup();
+        assortment.setProductGroup(productGroup);
         assortmentRepository.save(assortment);
     }
 }

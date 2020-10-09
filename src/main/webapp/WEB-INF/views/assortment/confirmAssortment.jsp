@@ -5,7 +5,11 @@
 <head>
     <title>Confirm Delete Assortment</title>
 </head>
+<link href="https://unpkg.com/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
+<div class="jumbotron text-center">
+    <h1>Potwierdź usunięcie</h1>
+</div>
 <p>Czy na pewno chcesz usunąć dobór nr: ${assortment.id}?</p>
 <a href="/assortment/all"><input type="submit" value="Anuluj"></a>
 

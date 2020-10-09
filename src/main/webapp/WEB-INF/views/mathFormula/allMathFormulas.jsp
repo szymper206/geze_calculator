@@ -5,11 +5,15 @@
 <head>
     <title>All Math Formulas</title>
 </head>
+<link href="https://unpkg.com/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
-<h1>Lista Wzorów</h1>
-<a href="/mathFormula/add">Dodaj Wzór</a><br>
-<table border="1">
-    <tr>
+<div class="jumbotron text-center">
+    <h1>Lista Wzorów</h1>
+</div>
+<div class="container">
+<a href="/mathFormula/add"><input type="submit" value="Dodaj wzór"></a><br>
+<table border="1" class="table table-striped table-boarder">
+    <tr class="thead-dark">
         <td>Id</td>
         <td>Wzór</td>
         <td>Akcja</td>
@@ -26,5 +30,6 @@
 </table>
 <br>
 <a href="/"><input type="submit" value="Powrót do strony głównej"></a>
+</div>
 </body>
 </html>

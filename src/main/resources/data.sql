@@ -24,7 +24,7 @@ insert into product(def_quantity, id_number, name, product_type_id) VALUES (1, 1
 
 insert into product(def_quantity, id_number, name, product_type_id) VALUES (1, 107577, "NAPĘD SLIMDRIVE EMD-F", 3);
 insert into product(def_quantity, id_number, name, product_type_id) VALUES (1, 106652, "POKRYWA NAPĘDU SLIMDRIVE EMD", 3);
-insert into product(def_quantity, id_number, name, product_type_id) VALUES (1, 133088, "SZYNA JEZDNA SLIMDRIVE EMD 710MM", 3);
+insert into product(def_quantity, id_number, name, product_type_id) VALUES (1, 123456, "SZYNA JEZDNA SLIMDRIVE EMD 710MM", 3);
 
 insert into product(def_quantity, id_number, name, product_type_id) VALUES (1, 153065, "NAPĘD POWERTURN", 4);
 insert into product(def_quantity, id_number, name, product_type_id) VALUES (1, 161927, "POKRYWA NAPĘDU POWERTURN", 4);

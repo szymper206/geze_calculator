@@ -20,14 +20,17 @@ import javax.servlet.ServletContext;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 @RequiredArgsConstructor
 @Controller
 @RequestMapping("/assortmentProduct")
 public class AssortmentProductsController {
     private final AssortmentProductsService assortmentProductsService;
-    private static final String DIRECTORY = "C:/Users/jaro4/Desktop/Report";
+    private static final String DIRECTORY = "";
     private static final String DEFAULT_FILE_NAME = "listaProduktow.pdf";
+    /*String path = "C:/Users/jaro4/Desktop/Report";
+    String fileName = "listaProduktow.pdf";*/
 
     @Autowired
     private ServletContext servletContext;
@@ -48,16 +51,13 @@ public class AssortmentProductsController {
         System.out.println("fileName: " + DEFAULT_FILE_NAME);
         System.out.println("mediaType: " + mediaType);
 
-        File file = new File(DIRECTORY + "/" + DEFAULT_FILE_NAME);
+        File file = new File(DIRECTORY + DEFAULT_FILE_NAME);
         InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
 
         return ResponseEntity.ok()
-                // Content-Disposition
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment;filename=" + file.getName())
-                // Content-Type
+                .header(HttpHeaders.CONTENT_DISPOSITION, "inline;filename=" + LocalDateTime.now().toString() + file.getName())
                 .contentType(mediaType)
-                // Contet-Length
-                .contentLength(file.length()) //
+                .contentLength(file.length())
                 .body(resource);
     }
 }

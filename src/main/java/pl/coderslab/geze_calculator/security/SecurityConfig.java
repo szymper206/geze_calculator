@@ -21,15 +21,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests()
-//                    .antMatchers("/").permitAll()
-//                    .antMatchers("/productGroup/**").hasRole("ADMIN")
-//                    .antMatchers("/productType/**").hasRole("ADMIN")
-//                    .antMatchers("/user/**").permitAll()
-//                    .antMatchers("/user/admin").permitAll()
-//                    .anyRequest().authenticated()
-//                .and().formLogin().loginPage("/login").permitAll()
-//                .and().logout().logoutSuccessUrl("/").permitAll();
+        http.authorizeRequests()
+                    .antMatchers("/").permitAll()
+                    .antMatchers("/user/admin").permitAll()
+                    .antMatchers("/productGroup/**",
+                            "/product/**",
+                            "/mathFormula/**",
+                            "/productType/**",
+                            "/user/**").hasRole("ADMIN")
+                    .anyRequest().authenticated()
+                .and().formLogin().loginPage("/login").permitAll()
+                .and().logout().logoutSuccessUrl("/").permitAll();
     }
 
 

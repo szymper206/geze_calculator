@@ -1,15 +1,21 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<!DOCTYPE html>
 <html>
 <head>
     <title>All Assortments</title>
 </head>
+<link href="https://unpkg.com/bootstrap@4.3.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
+<div class="jumbotron text-center">
 <h1>Lista Doborów</h1>
-<a href="/assortment/add">Dodaj dobór</a><br>
-<table border="1">
-    <tr>
+</div>
+
+<div class="container">
+<a href="/assortment/add"><input type="submit" value="Dodaj dobór"></a><br>
+<table border="1" class="table table-striped table-boarder">
+    <tr class="thead-dark">
         <td>Id/Numer Zamówienia</td>
         <td>Wysokość światła przejścia</td>
         <td>Szerokość światła przejścia</td>
@@ -41,5 +47,6 @@
 </table>
 <br>
 <a href="/"><input type="submit" value="Powrót do strony głównej"></a>
+</div>
 </body>
 </html>
